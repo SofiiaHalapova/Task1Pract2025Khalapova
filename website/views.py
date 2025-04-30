@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, render_template, redirect, request, jsonify
 import requests
 
 views = Blueprint('views', __name__)
@@ -16,6 +16,17 @@ def view():
 @views.route('/gradio')
 def gradio():
     return redirect("http://localhost:7860")
+
+
+@views.route('/chat', methods=['POST'])
+def chat_route():
+    try:
+        user_input = request.json.get('user_input')
+        result = chat(user_input)
+        return jsonify({'response': result})
+    except Exception as e:
+        print("Chat error:", e)
+        return jsonify({'error': str(e)}), 500
 
 
 def chat(user_input):

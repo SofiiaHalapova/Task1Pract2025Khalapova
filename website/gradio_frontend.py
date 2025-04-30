@@ -8,4 +8,4 @@ demo = gr.Interface(fn=chat,
                     inputs=gr.components.Textbox(label='User'),
                     outputs=gr.components.Textbox(label='Chat'))
 
-demo.launch()
+# demo.launch()
