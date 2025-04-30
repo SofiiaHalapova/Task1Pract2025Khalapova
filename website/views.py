@@ -4,7 +4,8 @@ import requests
 views = Blueprint('views', __name__)
 
 LM_STUDIO_URL = "http://localhost:1234/v1/chat/completions"
-LLM_NAME = "mistral-7b-instruct-v0.3"
+# LLM_NAME = "mistral-7b-instruct-v0.3"
+LLM_NAME = "llama-3.2-1b-instruct"
 
 
 @views.route('/', methods=['GET'])

@@ -1,5 +1,6 @@
 from flask import Flask
-from website.views import views
+
+from Task1Pract2025.website.views import views
 
 
 def create_app():
